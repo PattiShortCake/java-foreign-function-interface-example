@@ -39,9 +39,27 @@ public class FfiExample {
         }
     }
 
+    static double sumNumbersUsingWrapper(double a, double b) {
+        try(var session = MemorySession.openConfined()) {
+            NumberWrapper wrapper1 = new NumberWrapper(session);
+            wrapper1.setN(a);
+
+            NumberWrapper wrapper2 = new NumberWrapper(session);
+            wrapper2.setN(b);
+
+            NumberWrapper sum = wrapper1.add(wrapper2);
+            double sumValue = sum.getN();
+
+            System.out.println( String.format("%f + %f = %f", a, b, sumValue));
+
+            return sumValue;
+        }
+    }
+
     public static void main(String[] args) {
         printHelloWorld();
         sum(1, 3);
         sumNumbers(1.2, 7.8);
+        sumNumbersUsingWrapper(2.4, 8.9);
     }
 }

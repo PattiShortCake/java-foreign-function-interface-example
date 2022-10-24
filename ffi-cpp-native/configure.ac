@@ -23,8 +23,8 @@ LT_INIT
 AC_ENABLE_SHARED
 AC_ENABLE_STATIC
 
-# Check for C compiler
-AC_PROG_CC
+# Check for CXX compiler
+AC_PROG_CXX
 # We can add more checks in this section
 
 # Tells automake to create a Makefile

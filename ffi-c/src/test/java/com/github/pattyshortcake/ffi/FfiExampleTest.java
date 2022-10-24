@@ -36,4 +36,17 @@ class FfiExampleTest {
         Assertions.assertThat(actual).isEqualTo(6.8D);
     }
 
+    @Test
+    void sumNumbersUsingWrapper() {
+        // Given
+        double a = 2.3D;
+        double b = 4.5D;
+
+        // When
+        double actual = FfiExample.sumNumbersUsingWrapper(a, b);
+
+        // Then
+        Assertions.assertThat(actual).isEqualTo(6.8D);
+    }
+
 }

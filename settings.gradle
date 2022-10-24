@@ -1,1 +1,2 @@
 include 'ffi-c'
+include 'ffi-cpp'
