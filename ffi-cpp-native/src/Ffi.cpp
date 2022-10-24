@@ -2,9 +2,9 @@
 #include <string>
 #include <stdio.h>
 
-#include "ffi.h"
+#include "Ffi.h"
 
-extern int print_hello_world() {
+int print_hello_world() {
     std::cout << "Hello from c++ code!" << std::endl;
     fflush(stdout);
     return 0;
@@ -12,6 +12,13 @@ extern int print_hello_world() {
 
 int sum(int a, int b) {
     return a + b;
+}
+
+
+Number::Number() {}
+
+void Number::setValue(double value) {
+    _value = value;
 }
 
 //struct Number sum_numbers(struct Number a, struct Number b) {

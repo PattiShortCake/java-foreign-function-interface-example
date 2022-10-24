@@ -24,6 +24,7 @@ AC_ENABLE_SHARED
 AC_ENABLE_STATIC
 
 # Check for CXX compiler
+AC_PROG_CC
 AC_PROG_CXX
 # We can add more checks in this section
 
