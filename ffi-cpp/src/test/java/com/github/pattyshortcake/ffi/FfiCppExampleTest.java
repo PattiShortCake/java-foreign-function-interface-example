@@ -23,17 +23,17 @@ class FfiCppExampleTest {
         Assertions.assertThat(actual).isEqualTo(7);
     }
 
-//    @Test
-//    void sumNumbers() {
-//        // Given
-//        double a = 2.3D;
-//        double b = 4.5D;
-//
-//        // When
-//        double actual = FfiExample.sumNumbers(a, b);
-//
-//        // Then
-//        Assertions.assertThat(actual).isEqualTo(6.8D);
-//    }
+    @Test
+    void sumNumbers() {
+        // Given
+        double a = 2.3D;
+        double b = 4.5D;
+
+        // When
+        double actual = FfiCppExample.sumNumbers(a, b);
+
+        // Then
+        Assertions.assertThat(actual).isEqualTo(6.8D);
+    }
 
 }

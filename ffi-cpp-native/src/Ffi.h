@@ -1,6 +1,7 @@
 #ifndef FFI_H
 #define FFI_H
 
+
 #ifdef __cplusplus
     class Number
     {
@@ -35,8 +36,13 @@ extern "C" {
     extern Number* cplusplus_callback_function();
 #endif
 
+    struct NumberC {
+     double value;
+    };
+
     extern int print_hello_world();
     extern int sum(int a, int b);
+    extern struct NumberC sum_numbers(struct NumberC a, struct NumberC b);
 
 #ifdef __cplusplus
 }

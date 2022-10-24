@@ -21,7 +21,7 @@ void Number::setValue(double value) {
     _value = value;
 }
 
-//struct Number sum_numbers(struct Number a, struct Number b) {
-//    struct Number sum = { a.n + b.n };
-//    return sum;
-//}
+struct NumberC sum_numbers(struct NumberC a, struct NumberC b) {
+    struct NumberC sum = { a.value + b.value };
+    return sum;
+}
