@@ -1,0 +1,33 @@
+apply plugin: 'java-library'
+
+group 'com.github.pattyshortcake.ffi'
+version '1.0-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_19
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.assertj:assertj-core:3.23.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
+}
+
+sourceSets.main.java.srcDirs = [
+        'build/jextract/classes/com/github/pattyshortcake/ffi/jextract',
+        'src/main/java'
+]
+
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+test {
+    jvmArgs([
+            '--enable-preview',
+            '--enable-native-access=ALL-UNNAMED',
+            "-Djava.library.path=${rootDir}/ffi-c-native/src/.libs"
+    ])
+
+    useJUnitPlatform()
+}
